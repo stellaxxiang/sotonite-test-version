@@ -1,0 +1,167 @@
+.angular-google-map-container { height: 400px; }
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+nav.sidebar.navbar {
+	border-radius: 0px;
+}
+
+nav.sidebar, .main{
+	-webkit-transition: margin 200ms ease-out;
+	-moz-transition: margin 200ms ease-out;
+	-o-transition: margin 200ms ease-out;
+	transition: margin 200ms ease-out;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+	nav.sidebar:hover + .main{
+		margin-left: 200px;
+	}
+	
+	/*Center Brand*/
+	nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+		margin-left: 0px;
+	}
+	/*Center Brand*/
+	nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+		text-align: center;
+		width: 100%;
+		margin-left: 0px;
+	}
+	
+	/*Center Icons*/
+	nav.sidebar a{
+		padding-right: 13px;
+	}
+	
+	/*adds border top to first nav box */
+	nav.sidebar .navbar-nav > li:first-child{
+		border-top: 1px #e5e5e5 solid;
+	}
+	
+	/*adds border to bottom nav boxes*/
+	nav.sidebar .navbar-nav > li{
+		border-bottom: 1px #e5e5e5 solid;
+	}
+	
+	/* Colors/style dropdown box*/
+	nav.sidebar .navbar-nav .open .dropdown-menu {
+		position: static;
+		float: none;
+		width: auto;
+		margin-top: 0;
+		background-color: transparent;
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	
+	/*allows nav box to use 100% width*/
+	nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+		padding: 0 0px 0 0px;		
+	}
+	
+	/*colors dropdown box text */
+	.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+		color: #777;
+	}
+	
+	/*gives sidebar width/height*/
+	nav.sidebar{
+		position:fixed;
+		width: 200px;
+		height: 100%;
+		margin-left: 0px;
+		float: left;
+		margin-bottom: 0px;
+	}
+	
+	/*give sidebar 100% width;*/
+	nav.sidebar li {
+		width: 100%;
+	}
+	
+	/* Move nav to full on mouse over*/
+	nav.sidebar:hover{
+		margin-left: 0px;
+	}
+}
