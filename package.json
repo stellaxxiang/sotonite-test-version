@@ -51,6 +51,9 @@
     "grunt-cli": "1.2.0",
     "gzippo": "^0.2.0",
     "morgan": "^1.8.1",
-    "time-grunt": "^1.4.0"
+    "time-grunt": "^1.4.0",
+    "jit-grunt": "^0.9.1",
+    "autoprefixer-core": "^5.2.1",
+    "jshint-stylish": "^1.0.0"
   }
 }
