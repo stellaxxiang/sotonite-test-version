@@ -19,6 +19,7 @@ angular
     'ngSanitize',
     'ngTouch',
 	'ui.router',
+	'uiGmapgoogle-maps',
 	'ui.bootstrap'
   ])
   .config(function ($urlRouterProvider, $stateProvider, $locationProvider, uiGmapGoogleMapApiProvider) {
