@@ -16,8 +16,6 @@ angular
     'ngMessages',
     'ngResource',
     'ngRoute',
-    'ngSanitize',
-    'ngTouch',
 	'ui.router',
 	'uiGmapgoogle-maps',
 	'ui.bootstrap'
