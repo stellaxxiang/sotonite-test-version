@@ -42,7 +42,7 @@
   },
   "scripts": {
     "test": "karma start test\\karma.conf.js",
-	"postinstall": "node node_modules/bower/bin/bower install && grunt build"
+	"postinstall": "bower cache clean && bower install && grunt build"
   },
   "dependencies": {
     "connect-modrewrite": "^0.10.1",
