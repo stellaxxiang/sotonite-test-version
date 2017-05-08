@@ -18,7 +18,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-	'uiGmapgoogle-maps',
+	'angular-google-map',
 	'ui.router',
 	'ui.bootstrap'
   ])
