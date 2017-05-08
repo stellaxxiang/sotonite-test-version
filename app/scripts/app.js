@@ -18,11 +18,11 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+	'uiGmapgoogle-maps',
 	'ui.router',
-	'ui.bootstrap',
-	'uiGmapgoogle-maps'
+	'ui.bootstrap'
   ])
-  .config(function ($urlRouterProvider, $stateProvider, $locationProvider, uiGmapGoogleMapApiProvider) {
+  .config(function (uiGmapGoogleMapApiProvider, $urlRouterProvider, $stateProvider, $locationProvider) {
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false}).hashPrefix('');
