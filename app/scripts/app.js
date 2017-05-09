@@ -10,7 +10,6 @@
  */
 angular
   .module('odcw2App', ['ngAnimate', 'ngAria', 'uiGmapgoogle-maps', 'ui.router'])
-	//'ngAnimate', 'ngAria', 'uiGmapgoogle-maps', 'ngRoute', 'ui.router'
   .config(function(uiGmapGoogleMapApiProvider){
 	uiGmapGoogleMapApiProvider.configure({
         key: 'AIzaSyDyX25B6rkfX1gLfmnY5eiFHqBepw66TB8',
