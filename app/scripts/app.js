@@ -14,7 +14,7 @@ angular
 	uiGmapGoogleMapApiProvider.configure({
         key: 'AIzaSyDyX25B6rkfX1gLfmnY5eiFHqBepw66TB8',
         v: '3.28',
-        libraries: 'weather,geometry,visualization'
+        //libraries: 'weather,geometry,visualization'
     });
 })
   .config(function ($locationProvider) {
