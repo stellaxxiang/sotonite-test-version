@@ -16,7 +16,7 @@ angular
     'ngMessages',
     'ngResource',
     'ngRoute',
-	'uiGmapgoogle-maps',
+  'uiGmapgoogle-maps',
 	'ui.router',
 	'ui.bootstrap'
   ])
