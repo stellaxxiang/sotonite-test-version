@@ -12,8 +12,8 @@ angular
   .module('odcw2App', [
     'ngAnimate',
     'ngAria',
-    'ngRoute',
   	'uiGmapgoogle-maps',
+    'ngRoute',
 	'ui.router',
 	'ui.bootstrap'
   ])
