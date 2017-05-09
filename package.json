@@ -41,7 +41,7 @@
   },
   "scripts": {
     "test": "karma start test\\karma.conf.js",
-    "postinstall": "bower install && grunt build"
+    "postinstall": "bower cache clean && bower install && grunt build"
   },
   "dependencies": {
     "autoprefixer-core": "^5.2.1",
