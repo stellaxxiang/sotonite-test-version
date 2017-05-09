@@ -32,6 +32,7 @@
     "karma": "^1.6.0",
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4",
+    "main-bower-files": "^2.13.1",
     "phantomjs-prebuilt": "^2.1.14",
     "serve-static": "^1.12.2",
     "time-grunt": "^1.4.0"
@@ -44,8 +45,8 @@
     "postinstall": "bower cache clean && bower install && grunt build"
   },
   "dependencies": {
-    "bower": "^1.8.0",
     "autoprefixer-core": "^5.2.1",
+    "bower": "^1.8.0",
     "connect-modrewrite": "^0.10.1",
     "express": "^4.15.2",
     "grunt": "0.4.5",
