@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('odcw2App', ['ngAnimate', 'ngAria', 'ngRoute', 'uiGmapgoogle-maps', 'ui.router', 'ui.bootstrap'])
+  .module('odcw2App', ['ngAnimate', 'ngAria', 'ngRoute', 'uiGmapgoogle-maps', 'ui.router'])
   .config(function ($urlRouterProvider, $stateProvider, $locationProvider, uiGmapGoogleMapApiProvider) {
 	$locationProvider.html5Mode({
 		enabled: true,
