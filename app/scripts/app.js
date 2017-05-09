@@ -16,8 +16,8 @@ angular
     'ngMessages',
     'ngResource',
     'ngRoute',
-	'ui.router',
 	'uiGmapgoogle-maps',
+	'ui.router',
 	'ui.bootstrap'
   ])
   .config(function ($urlRouterProvider, $stateProvider, $locationProvider, uiGmapGoogleMapApiProvider) {
