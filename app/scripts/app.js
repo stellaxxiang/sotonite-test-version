@@ -13,7 +13,7 @@ angular
     'ngAnimate',
     'ngAria',
     'ngRoute',
-  'uiGmapgoogle-maps',
+  	'uiGmapgoogle-maps',
 	'ui.router',
 	'ui.bootstrap'
   ])
