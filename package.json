@@ -44,6 +44,7 @@
     "postinstall": "bower cache clean && bower install && grunt build"
   },
   "dependencies": {
+    "angular-google-maps": "^2.4.1",
     "autoprefixer-core": "^5.2.1",
     "bower": "^1.8.0",
     "connect-modrewrite": "^0.10.1",
