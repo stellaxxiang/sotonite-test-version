@@ -32,28 +32,6 @@ module.exports = function (grunt) {
 
     // Project settings
     yeoman: appConfig,
-	  
-	bower: {
-        dev: {
-            base: 'bower_components', /* the path to the bower_components directory */
-            dest: 'web/bower_components',
-            options: {
-                checkExistence: true,
-                debugging: true,
-                paths: {
-                    bowerDirectory: 'bower_components',
-                    bowerrc: '.bowerrc',
-                    bowerJson: 'bower.json'
-                }
-            }
-        },
-        flat: { /* flat folder/file structure */
-            dest: 'public/vendor',
-            options: {
-                debugging: true
-            }
-        }
-    }
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -452,8 +430,6 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('main-bower-files');
-	
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
