@@ -12,9 +12,6 @@ angular
   .module('odcw2App', [
     'ngAnimate',
     'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
     'ngRoute',
   'uiGmapgoogle-maps',
 	'ui.router',
