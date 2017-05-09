@@ -36,6 +36,10 @@
     "serve-static": "^1.12.2",
     "time-grunt": "^1.4.0"
   },
+  "cacheDirectories": [
+    "node_modules",
+    "bower_components"
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
