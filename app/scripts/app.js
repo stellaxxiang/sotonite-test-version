@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('odcw2App', ['ngAnimate', 'ngAria', 'ui.router', 'uiGmapgoogle-maps', 'ngRoute'])
+  .module('odcw2App', ['ngAnimate', 'ui.router', 'uiGmapgoogle-maps', 'ngRoute'])
   .config(function(uiGmapGoogleMapApiProvider){
 	uiGmapGoogleMapApiProvider.configure({
         key: 'AIzaSyDyX25B6rkfX1gLfmnY5eiFHqBepw66TB8',
