@@ -37,6 +37,30 @@ angular
 				});
 			}
 		}
+      })
+	.state('food', {
+		url: '/food',
+        templateUrl: 'views/foodTemplate.html',
+        controller: 'foodController',
+		resolve: {
+			foodData: function(foodService) {
+				return foodService.getFoods().then(function(response){
+					return response;
+				});
+			}
+		}
+      })
+	.state('drink', {
+		url: '/drink',
+        templateUrl: 'views/drinkTemplate.html',
+        controller: 'drinkController',
+		resolve: {
+			drinkData: function(drinkService) {
+				return drinkService.getDrinks().then(function(response){
+					return response;
+				});
+			}
+		}
       });
 })
 .config(function ($urlRouterProvider) {

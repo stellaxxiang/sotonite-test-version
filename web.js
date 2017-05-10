@@ -12,3 +12,9 @@ app.get('/', function(req, res){
 app.get('/atm', function(req, res){
   res.sendFile(__dirname + '/dist/index.html');
 });
+app.get('/food', function(req, res){
+  res.sendFile(__dirname + '/dist/index.html');
+});
+app.get('/drink', function(req, res){
+  res.sendFile(__dirname + '/dist/index.html');
+});

@@ -16,12 +16,13 @@ angular.module('odcw2App')
 		$scope.visibleMarkers=[];
 		$scope.atms = atmData; // atmData is resolved in ui-router
 		$scope.ATMdetail = {};
-		$scope.atms_list_show = true;
-		$scope.atms_detail_show = false;
+		$scope.atmsListShow = true;
+		$scope.atmsDetailShow = false;
+		$scope.map = {latitude: 50.936, longitude: -1.395, zoom: 12};
 		
 		// Init the view with google map
 		$scope.init = function(){
-			console.log("View initialized");
+			console.log('View initialized');
 			NgMap.getMap().then(function(maps) {
 				console.log('Map initialized.');
 				$scope.map = maps;
@@ -38,20 +39,24 @@ angular.module('odcw2App')
 			});
 		};
 		
-		// Add event for whole map
-		$scope.mapEvent = {
-			idle: function() { // Do changes when map is zoomed in/out or dragged
-				$scope.visibleMarkers.length = 0; // clean array
-				//uiGmapIsReady.promise().then(function(map_instances) {});
-				$scope.GMap = $scope.map.control.getGMap();
-				for (var i=0; i<$scope.markers.length; i++){
-					var temporaryPosition = new google.maps.LatLng($scope.markers[i].latitude, $scope.markers[i].longitude);
-					if( $scope.GMap.getBounds().contains(temporaryPosition) ){
-						$scope.visibleMarkers.push($scope.markers[i]);
-					}
-				}				
-			}
+		$scope.callbackFunc = function() {
+			console.log('You are at' + $scope.map.getCenter());
 		};
+		
+		// Add event for whole map
+//		$scope.mapEvent = {
+//			idle: function() { // Do changes when map is zoomed in/out or dragged
+//				$scope.visibleMarkers.length = 0; // clean array
+//				//uiGmapIsReady.promise().then(function(map_instances) {});
+//				$scope.GMap = $scope.map.control.getGMap();
+//				for (var i=0; i<$scope.markers.length; i++){
+//					var temporaryPosition = new google.maps.LatLng($scope.markers[i].latitude, $scope.markers[i].longitude);
+//					if( $scope.GMap.getBounds().contains(temporaryPosition) ){
+//						$scope.visibleMarkers.push($scope.markers[i]);
+//					}
+//				}				
+//			}
+//		};
 		
 		// Put retrieved data in markers array
 		for (var i=0; i<$scope.atms.length;i++) {
@@ -60,53 +65,36 @@ angular.module('odcw2App')
 				latitude: $scope.atms[i].coordinates.latitude,
 				longitude: $scope.atms[i].coordinates.longitude,
 				title: $scope.atms[i].name,
-				content: $scope.atms[i].label,
-				options: { draggable: false }
+				label: $scope.atms[i].label,
+				draggable: false,
+				animation: ""
 			});
 		}
 		
 		// Add event for all markers
 		$scope.markersEvent = {
-			mouseover: function (marker, eventName, model, args) {
-				marker.setIcon($scope.ATMIconRed);
+			click: function(event, marker) {
+				$scope.atm = marker;
+				$scope.showDetail(marker);
 				$scope.$apply();
-			},
-			mouseout: function (marker, eventName, model, args) {
-				marker.setIcon($scope.ATMIconBlue);
-				$scope.$apply();
-			},
-			click: function(marker, eventName, model, args) {
-				$scope.showWindowAndDetail(model);
-				$scope.$apply();
+				console.log('clicked');
 			}
-		};
-		
-		// Initialize markers window
-		$scope.window = {
-			marker: {},
-			show: false,
-			closeClick: function() {
-				this.show = false;
-			},
-			options: {}, // define when map is ready
-			title: '',
-			content: ''
 		};
 		
 		// Click and back to ATMs list
 		$scope.backToList = function() {
-			$scope.atms_list_show = true;
-			$scope.atms_detail_show = false;
+			$scope.atmsListShow = true;
+			$scope.atmsDetailShow = false;
 		};
 		
-		// Show marker window with ATM's name and label and change the content of details div
-		$scope.showWindowAndDetail = function(marker) {
-			$scope.window.model = marker;
-			$scope.window.title = marker.title;
-			$scope.window.content = marker.content;
-			$scope.window.show = true;
+		// change the content of details div
+		$scope.showDetail = function(marker) {
 			$scope.ATMdetail = $scope.atms[marker.id];
-			$scope.atms_list_show = false;
-			$scope.atms_detail_show = true;
+			marker.animation = "DROP";
+			$scope.map.latitude = $scope.ATMdetail.coordinates.latitude;
+			$scope.map.longitude = $scope.ATMdetail.coordinates.longitude;
+			$scope.map.zoom = 16;
+			$scope.atmsListShow = false;
+			$scope.atmsDetailShow = true;
 		};
 	}]);

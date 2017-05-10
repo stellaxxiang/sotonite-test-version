@@ -1,6 +1,6 @@
 <div ng-init="init()">
 	<div class="map_wrap">
-		<div id="atms_map">
+		<div id="foods_map">
 			<ng-map center='[{{map.latitude}},{{map.longitude}}]'
 					zoom='{{map.zoom}}'
 					geo-fallback-center="[50.936, -1.395]"
@@ -10,7 +10,7 @@
 						id="{{marker.id}}"
 						position="{{marker.latitude}}, {{marker.longitude}}"
 						title="{{marker.title}}"
-						icon="{{ATMIconBlue}}"
+						icon="{{foodIconBlue}}"
 						on-click="markersEvent.click(marker)"
 						draggable="{{marker.draggable}}"
 						animation="{{marker.animation}}"
@@ -22,32 +22,36 @@
 	</div>
 
 	<div class="detail_wrap">
-		<div id="atms_list" ng-repeat="atm in markers" ng-show="atmsListShow">
-			<p ng-click="showDetail(atm)">{{atm.title}}</p>
+		<div id="foods_list" ng-repeat="food in markers" ng-show="foodsListShow">
+			<p ng-click="showDetail(food)">{{food.title}}</p>
 		</div>
-		<div id="atms_details" ng-show="atmsDetailShow">
-			<div class="atms_details_title">
+		<div id="foods_details" ng-show="foodsDetailShow">
+			<div class="foods_details_title">
 				<div class="details_title">
-					ATM name:
+					Food service name:
 				</div>
 				<div class="details_title_name">
-					{{ATMdetail.name}}
+					{{foodDetail.name}}
 				</div>
 			</div>
-			<div class="atms_details_content">
+			<div class="foods_details_content">
 				<div class="details_content">
 					<table class="details_table">
 						<tr>
 							<td>Address:</td>
-							<td>{{ATMdetail.label}}</td>
+							<td>{{foodDetail.label}}</td>
 						</tr>
-						<tr ng-if="ATMdetail.building !== ''">
+						<tr ng-if="foodDetail.concept !== ''">
+							<td>The concept:</td>
+							<td>{{foodDetail.concept}}</td>
+						</tr>
+						<tr ng-if="foodDetail.desc !== ''">
+							<td>Detailed description:</td>
+							<td>{{foodDetail.desc}}</td>
+						</tr>
+						<tr ng-if="foodDetail.building !== ''">
 							<td>Located building on campus:</td>
-							<td>{{ATMdetail.building}}</td>
-						</tr>
-						<tr ng-if="ATMdetail.fee !== ''">
-							<td>Fee:</td>
-							<td>{{ATMdetail.fee}}</td>
+							<td>{{foodDetail.building}}</td>
 						</tr>
 					</table>
 				</div>
