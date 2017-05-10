@@ -1,8 +1,8 @@
 <div ng-init="init()">
 	<div class="map_wrap">
 		<div id="atms_map">
-			<ui-gmap-google-map center='map.center' zoom='map.zoom' control='map.control' events="mapEvent" options='map.option'>
-				<ui-gmap-window show="window.show" 
+			<ng-map center='[50.936, -1.395]' zoom='16' styles="[{ featureType: 'poi.business',stylers: [{ visibility: 'off'}]}]">
+				<!--ui-gmap-window show="window.show" 
 								coords="window.model" 
 								options="window.options" 
 								closeClick="window.closeClick()">
@@ -10,16 +10,14 @@
 						{{window.title}}<br/>
 						{{window.content}}
 					</div>
-				</ui-gmap-window>
-				<ui-gmap-markers
-								models="markers",
-								coords="'self'",
-								icon="ATMIconBlue",
-								options="'options'",
-								events="markersEvent"
-								>
-				</ui-gmap-markers>
-			</ui-gmap-google-map>
+				</ui-gmap-window-->
+				<marker ng-repeat="marker in markers"
+						position="{{marker.latitude}}, {{marker.longitude}}"
+						title="{{marker.title}}"
+						icon="{{ATMIconBlue}}"
+						>
+				</marker>
+			</ng-map>
 		</div>
 	</div>
 

@@ -9,14 +9,11 @@
  * Main module of the application.
  */
 angular
-  .module('odcw2App', ['ngAnimate', 'ngAria', 'ui.router', 'uiGmapgoogle-maps'])
-  .config(function(uiGmapGoogleMapApiProvider){
-	uiGmapGoogleMapApiProvider.configure({
-        key: 'AIzaSyDyX25B6rkfX1gLfmnY5eiFHqBepw66TB8',
-        v: '3.28',
-        //libraries: 'weather,geometry,visualization'
-    });
-})
+  .module('odcw2App',
+		  ['ngAnimate',
+		   'ngAria',
+		   'ui.router',
+		   'ngMap'])
   .config(function ($locationProvider) {
 	$locationProvider.html5Mode({
 		enabled: true,

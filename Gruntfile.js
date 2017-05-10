@@ -18,8 +18,10 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn'
   });
 
-  var modRewrite = require('connect-modrewrite');
-    var serveStatic = require('serve-static');
+  var modRewrite = require('connect-modrewrite')([
+    '!\\.ttf|\\.woff|\\.ttf|\\.eot|\\.html|\\.js|\\.coffee|\\.css|\\.png|\\.jpg|\\.gif|\\.svg$ /index.html [L]'
+  ]);
+  var serveStatic = require('serve-static');
   
   // Configurable paths for the application
   var appConfig = {
@@ -27,9 +29,10 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+	
   // Define the configuration for all the tasks
   grunt.initConfig({
-
+	  
     // Project settings
     yeoman: appConfig,
 
@@ -82,8 +85,8 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect, options) {
             return [
-				modRewrite(['^[^\\.]*$ /index.html [L]']),
-				connect().use('/', serveStatic('./server/views')),
+			  modRewrite,
+              connect().use('/', serveStatic('./server/views')),
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -274,31 +277,31 @@ module.exports = function (grunt) {
       }
     },
 
-//    // The following *-min tasks will produce minified files in the dist folder
-//    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-//    // minification. These next options are pre-configured if you do not wish
-//    // to use the Usemin blocks.
-//     cssmin: {
-//       dist: {
-//         files: {
-//           '<%= yeoman.dist %>/styles/main.css': [
-//             '.tmp/styles/{,*/}*.css'
-//           ]
-//         }
-//       }
-//     },
-//     uglify: {
-//       dist: {
-//         files: {
-//           '<%= yeoman.dist %>/scripts/scripts.js': [
-//             '<%= yeoman.dist %>/scripts/scripts.js'
-//           ]
-//         }
-//       }
-//     },
-//     concat: {
-//       dist: {}
-//     },
+    // The following *-min tasks will produce minified files in the dist folder
+    // By default, your `index.html`'s <!-- Usemin block --> will take care of
+    // minification. These next options are pre-configured if you do not wish
+    // to use the Usemin blocks.
+     cssmin: {
+       dist: {
+         files: {
+           '<%= yeoman.dist %>/styles/main.css': [
+             '.tmp/styles/{,*/}*.css'
+           ]
+         }
+       }
+     },
+     uglify: {
+       dist: {
+         files: {
+           '<%= yeoman.dist %>/scripts/scripts.js': [
+             '<%= yeoman.dist %>/scripts/scripts.js'
+           ]
+         }
+       }
+     },
+     concat: {
+       dist: {}
+     },
 
     imagemin: {
       dist: {
